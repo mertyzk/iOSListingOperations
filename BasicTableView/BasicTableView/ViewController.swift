@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -22,7 +22,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.dataSource = self
         
     }
-    
+}
+
+extension ViewController:UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -41,6 +43,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         print("Selected country: \(countries[indexPath.row])")
     }
     
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
     
-}
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete"){
+            (UIContextualAction, view, boolValue) in print("\(self.countries[indexPath.row]) delete")
+        }
+        
+        let editAction = UIContextualAction(style: .normal, title: "Edit"){
+            (UIContextualAction, view, boolValue) in print("\(self.countries[indexPath.row]) edit")
+        }
 
+        return UISwipeActionsConfiguration(actions: [deleteAction,editAction])
+    }
+}
