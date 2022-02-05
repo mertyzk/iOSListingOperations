@@ -15,6 +15,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     var countries = [String]()
     
+    var selectedCounty:String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -56,12 +58,13 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         textFieldCountry.text = countries[row]
+        selectedCounty = countries[row]
     }
     
     @objc func okayClick(){
         
-
-        
+        textFieldCountry.text = selectedCounty
+        view.endEditing(true)
     }
     
     @objc func cancelClick(){
