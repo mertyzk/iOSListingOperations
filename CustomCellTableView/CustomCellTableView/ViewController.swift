@@ -35,7 +35,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController:UITableViewDelegate,UITableViewDataSource{
+extension ViewController:UITableViewDelegate,UITableViewDataSource,TableViewCellProtocol{
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -53,6 +53,9 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
         
         cell.personNameLabel.text = "\(incomingData.personName!) -  \(incomingData.personPhone!)"
         
+        cell.cellProtocol = self
+        cell.indexPath = indexPath
+        
         return cell
         
     }
@@ -61,6 +64,10 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
         
         let incomingData = persons[indexPath.row]
         print("ID: \(incomingData.personId!) - \(incomingData.personName!) - \(incomingData.personPhone!)")
+    }
+    
+    func cellButtonClick(indexPath: IndexPath) {
+        print("Buton run: \(persons[indexPath.row].personName!)")
     }
     
     

@@ -28,14 +28,25 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zr5-AN-wSC">
-                                                    <rect key="frame" x="184.66666666666666" y="30" width="59" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                    <rect key="frame" x="190" y="33" width="48" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <color key="textColor" systemColor="systemRedColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MEX-hJ-nWe">
+                                                    <rect key="frame" x="344" y="30" width="56" height="31"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="Click"/>
+                                                    <connections>
+                                                        <action selector="clickButton:" destination="DZv-x0-ghI" eventType="touchUpInside" id="CI1-Wd-zVQ"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="MEX-hJ-nWe" secondAttribute="bottom" constant="18" id="RNS-dW-tuk"/>
                                                 <constraint firstItem="zr5-AN-wSC" firstAttribute="centerX" secondItem="qRg-uD-r0k" secondAttribute="centerX" id="geV-k6-v7G"/>
+                                                <constraint firstItem="MEX-hJ-nWe" firstAttribute="top" secondItem="qRg-uD-r0k" secondAttribute="topMargin" constant="19" id="h9F-kp-eWf"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="MEX-hJ-nWe" secondAttribute="trailing" constant="8" id="kAn-tZ-CSi"/>
                                                 <constraint firstItem="zr5-AN-wSC" firstAttribute="centerY" secondItem="qRg-uD-r0k" secondAttribute="centerY" id="qTa-mN-SH0"/>
                                             </constraints>
                                         </tableViewCellContentView>
